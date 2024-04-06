@@ -5,6 +5,9 @@ const getChuckJokeService = async () => {
     
     const chuckJoke = await response.data
     
+    if (!chuckJoke) {
+        return {statusCode: 500, message: 'Error getting joke'}
+    }
     return chuckJoke;
 }
 
