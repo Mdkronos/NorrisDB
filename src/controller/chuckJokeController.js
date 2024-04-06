@@ -3,11 +3,11 @@ const getChuckJokeService = require("../services/getchuckJokeService");
 
 const getChuckJokeController = async (req, res) => {
        
-    const joke = await getChuckJokeService();
+    const chuckJoke = await getChuckJokeService();
     
-    const { value } = joke;
+    const { icon_url: avatar, value: joke } = chuckJoke;
 
-    res.status(200).json({value});
+    res.status(200).json({avatar, joke});
 }
 
 module.exports = getChuckJokeController;

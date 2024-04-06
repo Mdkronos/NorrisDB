@@ -1,11 +1,10 @@
-
+const axios = require('axios');
 
 const getChuckJokeService = async () => {
-    const chuckJoke = await fetch('https://api.chucknorris.io/jokes/random');
-    // console.log(chuckJoke);
-    const { icon_url, value } = await chuckJoke;
-    console.log({value})
-    // return { icon_url, value }
+    const response = await axios.get('https://api.chucknorris.io/jokes/random');
+    
+    const chuckJoke = await response.data
+    
     return chuckJoke;
 }
 
